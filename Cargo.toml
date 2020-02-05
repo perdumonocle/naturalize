@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["perdumonocle <konstantin_1987@mail.ru>"]
 edition = "2018"
 license = "MIT"
+description = "Convert a string to a convenient view for natural sorting."
 
 [dependencies]
 nom = "5"
