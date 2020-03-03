@@ -1,10 +1,18 @@
 [package]
 name = "naturalize"
-version = "0.1.0"
-authors = ["perdumonocle <konstantin_1987@mail.ru>"]
-edition = "2018"
-license = "MIT"
+version = "0.1.1"
 description = "Convert a string to a convenient view for natural sorting."
+authors = ["perdumonocle <konstantin_1987@mail.ru>"]
+license = "MIT"
+edition = "2018"
+description = "Convert a string to a convenient view for natural sorting."
+keywords = ["sort", "natural"]
+categories = ["text-processing"]
+repository = "https://github.com/perdumonocle/naturalze.git"
+readme = "README.md"
+
+[badges]
+travis-ci = { repository = "perdumonocle/naturalize" }
 
 [dependencies]
 nom = "5"
