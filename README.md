@@ -8,6 +8,23 @@ Convert a string to a convenient view for natural sorting.
 
 E.g., output string may be stored into database for ordering by.
 
+## Usage
+
+To use `naturalize`, first add this to your `Cargo.toml`:
+
+```toml
+[dependencies]
+naturalize = "0.1"
+```
+
+Next, add this to your crate:
+
+```rust
+extern crate naturalize;
+
+use naturalize::to_natural;
+```
+
 ## Examples:
 
 ```rust
