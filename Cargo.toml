@@ -1,13 +1,13 @@
 [package]
 name = "naturalize"
-version = "0.1.1"
+version = "0.1.2"
 description = "Convert a string to a convenient view for natural sorting."
 authors = ["perdumonocle <konstantin_1987@mail.ru>"]
 license = "MIT"
 edition = "2018"
 keywords = ["sort", "natural"]
 categories = ["text-processing"]
-repository = "https://github.com/perdumonocle/naturalze.git"
+repository = "https://github.com/perdumonocle/naturalize.git"
 readme = "README.md"
 
 [badges]
