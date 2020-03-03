@@ -1,6 +1,11 @@
 # naturalize
 
+[![Build Status](https://travis-ci.org/perdumonocle/naturalize.svg)](https://travis-ci.org/perdumonocle/naturalize)
+[![Latest Version](https://img.shields.io/crates/v/naturalize.svg)](https://crates.io/crates/naturalize)
+[![Docs](https://docs.rs/naturalize/badge.svg)](https://docs.rs/naturalize)
+
 Convert a string to a convenient view for natural sorting.
+
 E.g., output string may be stored into database for ordering by.
 
 ## Examples:

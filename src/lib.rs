@@ -1,6 +1,7 @@
 //! # naturalize
 //!
 //! Convert a string to a convenient view for natural sorting.
+//!
 //! E.g., output string may be stored into database for ordering by.
 //!
 //! ## Examples:
