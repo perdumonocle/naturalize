@@ -1,3 +1,73 @@
+//! # naturalize
+//!
+//! Convert a string to a convenient view for natural sorting.
+//! E.g., output string may be stored into database for ordering by.
+//!
+//! ## Examples:
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("abc123def").unwrap();
+//! assert_eq!(nat, "abc0000000123def");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("").unwrap();
+//! assert_eq!(nat, "");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("1020").unwrap();
+//! assert_eq!(nat, "0000001020");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("102030405060708090").unwrap();
+//! assert_eq!(nat, "102030405060708090");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("Hello").unwrap();
+//! assert_eq!(nat, "Hello");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("10 apples").unwrap();
+//! assert_eq!(nat, "0000000010 apples");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("apples 10").unwrap();
+//! assert_eq!(nat, "apples 0000000010");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("172.29.21.151").unwrap();
+//! assert_eq!(nat, "0000000172.0000000029.0000000021.0000000151");
+//! ```
+//!
+//! ```
+//! use naturalize::to_natural;
+//!
+//! let nat = to_natural("IP = 172.29.21.151").unwrap();
+//! assert_eq!(nat, "IP = 0000000172.0000000029.0000000021.0000000151");
+//! ```
+
 use nom::bytes::complete::{take_till, take_while};
 use nom::IResult;
 use std::error::Error;
@@ -25,7 +95,6 @@ fn run_parser(input: &str) -> IResult<&str, String> {
     Ok((input, (*natur).to_string()))
 }
 
-/// Комбинатор парсеров для выципления пары текста и числа с дополнением числа нулями
 /// Parser combinator for taking of pair with text and number. Append number with zeroes.
 fn text_num<'a>(input: &'a str, natur: &mut String) -> IResult<&'a str, String> {
     let (input, prefix) = take_till(is_digit)(input)?;
